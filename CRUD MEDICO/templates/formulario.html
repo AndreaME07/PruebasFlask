@@ -7,47 +7,56 @@
 </head>
 <body>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <style>
+        /* CSS personalizado */
+        .navbar-custom {
+            background-color: #a965dd; /* Este es el valor hexadecimal para indigo-600 */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-              <a class="nav-link active" aria-current="page" href="#">Formulario</a>
+            <a class="navbar-brand" href="/">HOME</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="formulario">Formulario</a>
+                </div>
             </div>
-          </div>
         </div>
-      </nav>
-    <h2>Buenas tardes Médico</h2>
-    
-    <form action="guardarmedico" method="POST">
-        <label for="txtNombre">Nombre:</label>
-        <input type="text" id="txtNombre" name="txtNombre" required><br>
+    </nav>
+    <h4>Por favor rellena el formulario</h4>
+   
+    <form action="guardarMedico" method="POST">
+        <div class="row justify-content-center">
+        <div class="mb-4 col-md-4">
+            <label for="txtNombre"  class="form-label">Nombre:</label>
+            <input type="text" class="form-control" id="txtNombre" name="txtNombre" required>
+            
+            <label for="txtApellido_p" class="form-label">Apellido Paterno:</label>
+            <input type="text" class="form-control" id="txtApellido_p" name="txtApellido_p" required>
 
-        <label for="txtApellido_p">Apellido Paterno:</label>
-        <input type="text" id="txtApellido_p" name="txtApellido_p" required><br>
+            <label for="txtApellido_m" class="form-label">Apellido Materno:</label>
+            <input type="text" class="form-control" id="txtApellido_m" name="txtApellido_m" required>
 
-        <label for="txtApellido_m">Apellido Materno:</label>
-        <input type="text" id="txtApellido_m" name="txtApellido_m" required><br>
+            <label for="txtRFC" class="form-label">RFC:</label>
+            <input type="text" class="form-control" id="txtRFC" name="txtRFC" required>
 
-        <label for="txtRFC">RFC:</label>
-        <input type="text" id="txtRFC" name="txtRFC" required><br>
+            <label for="txtCedula" class="form-label">Cédula:</label>
+            <input type="text" class="form-control" id="txtCedula" name="txtCedula" required>
 
-        <label for="txtCedula">Cédula:</label>
-        <input type="text" id="txtCedula" name="txtCedula" required><br>
+            <label for="txtCorreo" class="form-label">Correo:</label>
+            <input type="email" class="form-control" id="txtCorreo" name="txtCorreo" required>
 
-        <label for="txtCorreo">Correo:</label>
-        <input type="email" id="txtCorreo" name="txtCorreo" required><br>
+            <label for="txtContrasena" class="form-label">Contraseña:</label>
+            <input type="password" class="form-control" id="txtContrasena" name="txtContrasena" required>
+        </div>
+    </div>
 
-        <label for="txtContrasena">Contraseña:</label>
-        <input type="password" id="txtContrasena" name="txtContrasena" required><br>
-
-        <button type="submit">Guardar Médico</button>
-    </form>
-    {% with messages = get_flashed_messages() %}
+        {% with messages = get_flashed_messages() %}
         {% if messages %}
             <ul>
             {% for message in messages %}
@@ -56,7 +65,13 @@
             </ul>
         {% endif %}
     {% endwith %}
+    <button type="submit" class="btn btn-outline-primary" >Guardar Médico</button>
+    </form>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
 </body>
 </html>
 
