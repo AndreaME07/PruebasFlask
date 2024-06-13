@@ -10,7 +10,17 @@
     <style>
         /* CSS personalizado */
         .navbar-custom {
-            background-color: #a965dd; /* Este es el valor hexadecimal para indigo-600 */
+            background-color: #8fd1e1; /* Este es el valor hexadecimal para indigo-600 */
+        }
+
+        .container-md {
+            
+            justify-content: center;
+            align-items: center;
+            height: 200vh;
+            width: 800px;
+            height: 500px;
+            background-color: #488ad684;
         }
     </style>
 </head>
@@ -31,8 +41,11 @@
     <h4>Por favor rellena el formulario</h4>
    
     <form action="guardarMedico" method="POST">
+        <div class="container-md">
+            <div class="row">
+                <div class="container-fluid" >
         <div class="row justify-content-center">
-        <div class="mb-4 col-md-4">
+        <div class="mb-3 col-md-4">
             <label for="txtNombre"  class="form-label">Nombre:</label>
             <input type="text" class="form-control" id="txtNombre" name="txtNombre" required>
             
@@ -65,9 +78,12 @@
             </ul>
         {% endif %}
     {% endwith %}
-    <button type="submit" class="btn btn-outline-primary" >Guardar Médico</button>
+</div>
+<button type="submit" class="btn btn-info" style="background-color: #1c22d181;" >Guardar Médico</button>
+</div>
+</div>
     </form>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
